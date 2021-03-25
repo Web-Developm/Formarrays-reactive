@@ -1,5 +1,5 @@
 import { Component,OnInit } from '@angular/core';
-import { FormArray,FormGroup,FormBuilder} from '@angular/forms';
+import { FormArray,FormGroup,FormBuilder, FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +13,7 @@ export class AppComponent {
 constructor(public fb:FormBuilder)
 {
   this.sample=this.fb.group({
-    add:this.fb.array([
+    add:this.fb.array([this.fields()
     ])
   });
 

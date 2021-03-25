@@ -16,12 +16,15 @@
 
 
   </form>-->
-  <button type="button" class="btn btn-dark" (click)="add()">Add</button>
+  
   <form [formGroup]="sample">
     <div formArrayName="add">
       <div *ngFor="let sample2 of sample1().controls; let i = index">
         <div [formGroupName]="i">
-          {{i}}
+
+          <button type="button" class="btn btn-dark" (click)="add()">Add</button>
+          <button type="button" class="btn btn-dark" (click)="delete(i)">Delete</button>
+          
           <div class="form-group">
             <label>First Name</label>
             <input type="text" class="form-control" formControlName="name" />
@@ -39,7 +42,7 @@
   
           <div class="btn-group">
   
-            <button type="button" class="btn btn-dark" (click)="delete(i)">Delete</button>
+            
   
           </div>
         </div>
